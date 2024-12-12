@@ -18,7 +18,20 @@ import useStyles from "./styles";
 const App = () => {
   const classes = useStyles();
   const theme = createTheme();
-  const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const cards = [
+    "https://i.pinimg.com/736x/8b/ba/33/8bba33a9026af9798fec727069b5effd.jpg",
+    "https://i.pinimg.com/236x/7a/73/e1/7a73e16b4ecf38df0a42c0570b20d337.jpg",
+    "https://i.pinimg.com/236x/b9/20/df/b920df45fe76a77360284c79ef42e032.jpg",
+    "https://i.pinimg.com/236x/c4/96/a5/c496a5f4215f0f0e18a9a785a4b2cb58.jpg",
+    "https://i.pinimg.com/236x/ac/50/52/ac505248bf5ca92f520ea1fbc1fc6e23.jpg",
+    "https://i.pinimg.com/236x/a6/6d/b5/a66db5becb373c7ac50e0c11e4d3b386.jpg",
+    "https://i.pinimg.com/236x/19/ad/66/19ad662a592ad25aa18183dc9935957b.jpg",
+    "https://i.pinimg.com/236x/21/ed/92/21ed9290d7eb95256b1984d74d524c85.jpg",
+    "https://i.pinimg.com/236x/fd/1a/e5/fd1ae580cd838da86bab537bfb110a08.jpg",
+  ];
+  const viewButton = (click) => {
+    window.location = click;
+  };
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -73,7 +86,7 @@ const App = () => {
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
-                      image="https://i.pinimg.com/736x/7a/73/e1/7a73e16b4ecf38df0a42c0570b20d337.jpg"
+                      image={card}
                       title="Lovely Otters"
                     />
                     <CardContent className={classes.CardContent}>
@@ -86,11 +99,11 @@ const App = () => {
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <Button size="small" color="primary">
+                      <Button
+                        size="small"
+                        color="primary"
+                        onClick={() => viewButton(card)}>
                         View
-                      </Button>
-                      <Button size="small" color="primary">
-                        Edit
                       </Button>
                     </CardActions>
                   </Card>
